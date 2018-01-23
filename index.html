@@ -12,14 +12,61 @@
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/bulma.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.0/js/all.js">
     </head>
-    <body>
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
 
-        <!-- Add your site or application content here -->
+    <body>
+        <header>
+            <nav class="navbar" is-fixed-top role="navigation" aria-label="main navigation">
+                <button class="button navbar-burger" id="navbar-burger">
+                    <span>Accueil</span>
+                    <span>Liste Recette</span>
+                    <span>Gérer</span>
+                </button>
+                <div class="navebar-menu">
+                    <div class="navebar-start">
+                        <a href="" class="navbar-item">Accueil</a>
+                        <a href="" class="navbar-item">Liste Recette</a>
+                        <a href="" class="navbar-item">Nouvelle Recette</a>
+                    </div>
+                    <div class="navebar-end">
+                        <a href="#" class="navbar-item">Admin</a>
+                    </div>
+                </div>
+            </nav>
+        </header> 
+        <section class="hero is-light">
+            
+
+            <div class="container has-text-centered">
+                <h1 class="title">Trouver une recette</h1>
+                <form action="#">
+                    <div class="field has-addons has-addons-centered">
+                        <div class="control">
+                            <input type="search" class="input" placeholder="recette, catégorie, ingrédients..." name="">
+                        </div>
+                        <div class="control">
+                             <a class="button fa fa-search is-medium" aria-hidden="true"></a>
+                        </div>
+                    </div>
+                </form>
+            </div>    
+        </section>
+        <section>
+            
+        </section>
+        <footer>
+            <div class="container">
+                <div class="content has-text-centered">
+                    <p>
+                        Made with <span class="fa fa-heart has has-text-centered"></span>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
         <p>Hello world! This is HTML5 Boilerplate.</p>
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -27,11 +74,6 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-        <script>
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
-        </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+        
     </body>
 </html>
