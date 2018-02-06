@@ -2,16 +2,28 @@
 
 
 document.addEventListener('DOMContentLoaded', function(){})
-	const $addButton = $('add-person');
-	const $removeButton = $('remove-person');
 
-	//console.dir($addButton);
-	//console.dir($removeButton);
+const $addButton = $('.add-person');
+const $removeButton = $('.remove-person');
+const $nbPerson = parseint($('.num-person').text());
+const $qteIngredients = $('.qteIngredients')
 
-	$addButton.on('click', function(event){
-		console.dir(event);
-	});
+let numPerson =parseFloat($nbPerson.first().text())
 
-	$removeButton.on('click', function (event) {
-		console.dir(event);
-	})
+
+
+$addButton.on('click', function(event){
+	const coef = numPerson;
+	numPerson++;
+	calculateQte(coef, numPerson);
+
+});
+
+$removeButton.on('click', function (event) {
+	if (numPerson === 1) {
+		return;
+	}
+	const coef = numPerson;
+	numPerson++;
+	calculateQte(coef, numPerson);
+})
