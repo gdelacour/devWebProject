@@ -49,9 +49,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'RecipeController';
+$route['default_controller'] = 'HomeController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['recipe'] = 'RecipeController';
-$route['recipe/{num}'] = 'RecipeController/recipe/$1';
+$route['recipe/(:num)'] = 'RecipeController/recipe/$1';
 $route['Ingredients'] = 'IngredientController';
