@@ -28,9 +28,9 @@
                 <div class="navbar-menu">
                     <div class="navbar-start">
       <div class="navbar-item is-size-3 has-text-weight-bold">Miam</div>
-                        <a href="index.php/home" class="navbar-item">Accueil</a>
+                        <a href="home" class="navbar-item">Accueil</a>
                         <a href="" class="navbar-item">Liste Recette</a>
-      <a href="index.php/recipe" class="navbar-item">Nouvelle Recette</a>
+      <a href="recipe" class="navbar-item">Nouvelle Recette</a>
                     </div>
                     <div class="navbar-end">
                         <a href="#" class="navbar-item">Admin</a>
