@@ -11,7 +11,7 @@ class RecipeController extends MY_Controller
             'pageTitle' => "Marmite !!!"
         );
 
-        $this->renderView( 'recipe/main', $data);
+        $this->renderView( 'recipe/recette', $data);
 
     }
 

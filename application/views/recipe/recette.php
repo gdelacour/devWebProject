@@ -4,14 +4,14 @@
 
 <?php
 $bdd = new PDO('mysql:host=127.0.0.1;dbname=miamBDD;charset=utf8', 'admin', 'some_pass');
-
-
- ?>
+$result = $bdd->query ('SELECT * FROM `Recette` WHERE 1');
+$affich = $result->fetch();
+?>
 <!-- En-tête de la recette -->
     <div class="container has-text-centered">
         <h1 class="title">
-            <?
-                $result = $bdd->query ('SELECT Nom_Recette FROM Recette WHERE Id_Recette = 1');
+            <?php
+                echo $affich['Nom_Recette'];
             ?>
         </h1>
      <figure class="image is-128x128 has-text-centered">
@@ -22,17 +22,30 @@ $bdd = new PDO('mysql:host=127.0.0.1;dbname=miamBDD;charset=utf8', 'admin', 'som
      <!-- Description de la recette -->
      <div class="columns has-text-centered">
      <div class="column">
-     Temps de préparation : 2 minutes
+     Temps de préparation : <?php
+                echo $affich['Temps_Prep'];
+            ?> minutes
      </div>
      <div class="column">
      <div class="level-item buttons has-addons">
-Personne: <span class="has-text-warning is-size-3 num-person">4</span>
+Personne:   <span class="has-text-warning is-size-3 num-person">
+                <?php
+                    echo $affich['Nb_Perso'];
+                ?>
+                
+            </span>
      <button class="button is-small add-person"></button>
      <button class="button is-small remove-person"></button>
      </div>
      </div>
      <div class="column">
-Difficulté : Très facile
+Difficulté :<?php
+                if ($affich['Nom_Recette'] = 1)
+                    {
+                        echo 'Très facile';
+                    }   
+            ?>
+             
          </div>
          </div>
          <!-- Recette -->
@@ -48,13 +61,9 @@ Difficulté : Très facile
 	      </div>
 	      <div class="column">
 		<h2 class="title">Préparations</h2>
-		<ul>
-		  <li>Chauffez de l'eau</li>
-         <li>Versez l'eau dans une tasse</li>
-		  <li>Versez le café en sachet dans la tasse</li>
-		  <li>Rajoutez le sucre et le lait à votre convenance</li>
-		  <li>Touillez</li>
-		</ul>
+		  <?php
+                echo $affich['Préparation'];
+            ?>
 	      </div>
 	    </div>
 	    
