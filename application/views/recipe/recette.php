@@ -10,7 +10,8 @@ $resultIng = $bdd->query ('SELECT * FROM `Ingredient`');
 $affichIng = $resultIng->fetch();
 $resultRecipe_Ing = $bdd->query ('SELECT * FROM `Recette_Ingredient` WHERE Id_Recette = 1');
 $affichRecipe_Ing = $resultRecipe_Ing->fetch();
-
+$nb_Ing = $bdd->query('SELECT COUNT(*) FROM `Recette_Ingredient` ');
+$affichNb_Ing = $nb_Ing->fetch();
 ?>
 <!-- En-tête de la recette -->
     <div class="container has-text-centered">
@@ -59,112 +60,39 @@ Difficulté :<?php
          <div class="column">
          <h2 class="title">Ingrédients</h2>
          <ul>
-         <li>
-                <?php
-                    if ($affichIng['Id_Ingredient'] == 1)
-                        {
-                            echo $affichIng['Nom_Ingredient'];
-                        }
-                    else echo 'error'  
-                ?>
-            <span class="qteIngredient">
-                <?php
-                    if ($affichRecipe_Ing['Id_Recette']==1 && $affichRecipe_Ing['Id_Ingredient'] == 1)
-                        {
-                            echo $affichRecipe_Ing['Quantite'];
-                        }
-                    else echo 'error'  
-                ?>
-            </span>
-                <?php
-                    if ($affichRecipe_Ing['Id_Recette']==1 && $affichRecipe_Ing['Id_Ingredient'] == 1)
-                        {
-                            echo $affichRecipe_Ing['Unite'];
-                        }
-                    else echo 'error'  
-                ?>
-            </li>
-
-
-            <li>
-                    <?php
-                        if ($affichIng['Id_Ingredient'] == 2)
-                            {
-                                echo $affichIng['Nom_Ingredient'];
-                            }
-                        else echo 'error'  
-                    ?>
-                <span class="qteIngredient">
-                    <?php
-                        if ($affichRecipe_Ing['Id_Recette']==1 && $affichRecipe_Ing['Id_Ingredient'] == 2)
-                            {
-                                echo $affichRecipe_Ing['Quantite'];
-                            }
-                        else echo 'error'  
-                    ?>
-                </span>
-                    <?php
-                        if ($affichRecipe_Ing['Id_Recette']==1 && $affichRecipe_Ing['Id_Ingredient'] == 2)
-                            {
-                                echo $affichRecipe_Ing['Unite'];
-                            }
-                        else echo 'error'  
-                    ?>
-            </li>
-
-
-            <li>
-                    <?php
-                        if ($affichIng['Id_Ingredient'] == 3)
-                            {
-                                echo $affichIng['Nom_Ingredient'];
-                            }
-                        else echo 'error'  
-                    ?>
-                <span class="qteIngredient">
-                    <?php
-                        if ($affichRecipe_Ing['Id_Recette']==1 && $affichRecipe_Ing['Id_Ingredient'] == 3)
-                            {
-                                echo $affichRecipe_Ing['Quantite'];
-                            }
-                        else echo 'error'  
-                    ?>
-                </span>
-                    <?php
-                        if ($affichRecipe_Ing['Id_Recette']==1 && $affichRecipe_Ing['Id_Ingredient'] == 3)
-                            {
-                                echo $affichRecipe_Ing['Unite'];
-                            }
-                        else echo 'error'  
-                    ?>
-            </li>
-
-
-            <li>
-                    <?php
-                        if ($affichIng['Id_Ingredient'] == 4)
-                            {
-                                echo $affichIng['Nom_Ingredient'];
-                            }
-                        else echo 'error'  
-                    ?>
-                <span class="qteIngredient">
-                    <?php
-                        if ($affichRecipe_Ing['Id_Recette']==1 && $affichRecipe_Ing['Id_Ingredient'] == 4)
-                            {
-                                echo $affichRecipe_Ing['Quantite'];
-                            }
-                        else echo 'error'  
-                    ?>
-                </span>
-                    <?php
-                        if ($affichRecipe_Ing['Id_Recette']==1 && $affichRecipe_Ing['Id_Ingredient'] == 4)
-                            {
-                                echo $affichRecipe_Ing['Unite'];
-                            }
-                        else echo 'error'  
-                    ?>
-            </li>
+            <?php 
+            $i = 1;
+            while( $affichNb_Ing)
+            {
+                 ?><li>
+                        <?php
+                            if ($affichIng['Id_Ingredient'] == $i)
+                                {
+                                    echo $affichIng['Nom_Ingredient'];
+                                }
+                            else echo 'error'  
+                        ?>
+                    <span class="qteIngredient">
+                        <?php
+                            if ($affichRecipe_Ing['Id_Recette']==1 && $affichRecipe_Ing['Id_Ingredient'] == $i)
+                                {
+                                    echo $affichRecipe_Ing['Quantite'];
+                                }
+                            else echo 'error'  
+                        ?>
+                    </span>
+                        <?php
+                            if ($affichRecipe_Ing['Id_Recette']==1 && $affichRecipe_Ing['Id_Ingredient'] == $i)
+                                {
+                                    echo $affichRecipe_Ing['Unite'];
+                                }
+                            else echo 'error'  
+                        ?>
+                    </li>
+                <? 
+                $i++;
+            }
+            ?>
         </ul>
           </div>
           <div class="column">
@@ -173,7 +101,6 @@ Difficulté :<?php
                 echo $affichrecette['Préparation'];
             ?>
           </div>
-        </div>
-        
+        </div>    
       </div.box>
     </section>
