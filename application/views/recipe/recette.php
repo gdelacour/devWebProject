@@ -62,7 +62,7 @@ Difficulté :<?php
          <ul>
             <?php 
             $i = 1;
-            while( $affichNb_Ing)
+            while( $i <= $affichNb_Ing)
             {
                  ?><li>
                         <?php
