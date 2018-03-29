@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'HomeController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['home'] = 'HomeController';
 $route['recipe'] = 'RecipeController';
 $route['recipe/(:num)'] = 'RecipeController/recipe/$1';
 $route['Ingredients'] = 'IngredientController';
