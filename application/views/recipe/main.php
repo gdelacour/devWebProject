@@ -2,9 +2,18 @@
 	<section>
 <div.box>
 
+<?php
+$bdd = new PDO('mysql:host=127.0.0.1;dbname=miamBDD;charset=utf8', 'admin', 'some_pass');
+
+
+ ?>
 <!-- En-tête de la recette -->
     <div class="container has-text-centered">
-     <h1 class="title">Café étudiant</h1>
+        <h1 class="title">
+            <?
+                $result = $bdd->query ('SELECT Nom_Recette FROM Recette WHERE Id_Recette = 1');
+            ?>
+        </h1>
      <figure class="image is-128x128 has-text-centered">
      <img src="https://cdn.pixabay.com/photo/2016/11/14/10/06/cafe-latte-1823066_640.jpg">
      </figure>
